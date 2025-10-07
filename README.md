@@ -184,12 +184,6 @@ Because different analyses wire modules differently, the repository leaves the e
 
 ---
 
-## License
-
-If a license file is present at the repository root, it governs usage and distribution. If not, please add one to clarify terms for collaborators and downstream users.
-
----
-
 ## Acknowledgments
 
 The repository contains contributions from multiple student authors. Code comments and headers attribute original implementations where available (for example, in `Histograms/Histograms.hh`). The structure and interfaces borrow conventions from typical CMSSW analysis packages to ensure maintainability and portability across sites.
