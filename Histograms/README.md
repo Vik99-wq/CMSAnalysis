@@ -5,7 +5,7 @@ It serves as the primary visualization and validation layer of the analysis pipe
 
 ---
 
-## 📘 Overview
+## Overview
 
 In CMS-style analyses, histograms form the bridge between **event-level data** and **physics interpretations**.  
 They allow researchers to visualize distributions of observables (mass, transverse momentum, pseudorapidity, etc.), compare Monte Carlo (MC) simulations with real data, and extract statistical insights.
@@ -17,7 +17,7 @@ Within this project:
 
 ---
 
-## 🧩 Directory Structure
+## Directory Structure
 
 ```
 Histograms/
@@ -32,7 +32,7 @@ Histograms/
 
 ---
 
-## 🎯 Goals
+## Goals
 
 The histogram subsystem is designed to:
 
@@ -44,7 +44,7 @@ The histogram subsystem is designed to:
 
 ---
 
-## ⚙️ How It Works
+## How It Works
 
 ### 1. Initialization
 
@@ -112,7 +112,7 @@ root -l Output/histograms.root
 
 ---
 
-## 📊 GenSim vs. Reco Validation
+## GenSim vs. Reco Validation
 
 The provided example dumps — `GenSimEventDump.txt` and `RecoEventDump.txt` — allow developers to verify the correctness of the histogram logic by comparing truth-level and reconstructed distributions.
 
@@ -124,7 +124,7 @@ This comparison ensures accurate reconstruction algorithms and event selection b
 
 ---
 
-## 🔬 Example Workflow
+## Example Workflow
 
 A typical end-to-end usage scenario within the CMSAnalysis framework:
 
@@ -151,7 +151,7 @@ A typical end-to-end usage scenario within the CMSAnalysis framework:
 
 ---
 
-## 🧠 Design Philosophy
+## Design Philosophy
 
 The histogram subsystem is built around **modularity**, **reusability**, and **integration**:
 
@@ -166,7 +166,7 @@ The histogram subsystem is built around **modularity**, **reusability**, and **i
 
 ---
 
-## 🧰 Dependencies
+## Dependencies
 
 - [ROOT](https://root.cern/) ≥ 6.0  
 - CMSSW build environment (via `BuildFile.xml`)  
@@ -178,7 +178,7 @@ Optional for plotting and statistical post-processing:
 
 ---
 
-## 📂 Output Example
+## Output Example
 
 Example histograms typically produced:
 
@@ -191,7 +191,7 @@ Example histograms typically produced:
 
 ---
 
-## 🧩 Future Extensions
+## Future Extensions
 
 - Automatic systematic variation handling (`*_Up`, `*_Down`)  
 - YAML-based histogram configuration files  
@@ -200,14 +200,14 @@ Example histograms typically produced:
 
 ---
 
-## 🧑‍💻 Author & Maintenance
+## Author & Maintenance
 
 Developed and maintained by CMS student collaborators as part of the **CMS Analysis Framework** project.  
 Contributions are welcome through pull requests and issues.
 
 ---
 
-## 📜 License
+## License
 
 This module is distributed under the **MIT License** (or project license if different).  
 See the root `LICENSE` file for full terms.
