@@ -54,7 +54,7 @@ Key abstractions used throughout the repository:
 
 ## Directory‑by‑directory guide
 
-### Analysis/
+### Analysis
 Top‑level control logic and utilities that tie modules together and provide end‑to‑end workflows. Typical contents include small programs or ROOT macros that:
 - configure processes and inputs,
 - run selections,
@@ -63,7 +63,7 @@ Top‑level control logic and utilities that tie modules together and provide en
 
 `Analysis/bin` contains compiled helpers and macros such as `AutoSuperImpose.C`, `CombineCanvases.C`, and scripts for background estimates. The package has its own `BuildFile.xml` and public headers under `Analysis/interface/`.
 
-### DataCollection/
+### DataCollection
 Implements data ingestion and event access. You will find the core abstractions for reading events and presenting them to modules:
 
 - `Analyzer.hh`, `AnalyzerOptions.hh`, `AnalyzerParams.hh`: high‑level drivers for running configured pipelines.  
@@ -75,17 +75,17 @@ Implements data ingestion and event access. You will find the core abstractions 
 
 This package hides the details of file formats and exposes a single `EventInput` to all downstream modules.
 
-### EventFiles/
+### EventFiles
 Reference event dumps for validation and regression tests. Example files include `GenSimEventDump.txt` and `RecoEventDump.txt`. These are useful when checking basic distributions or debugging object definitions early in a study.
 
-### Filters/
+### Filters
 Physics selections used to define analysis regions and control samples. For example:
 - `HiggsSelector.cc` to retain Higgs‑like topologies,
 - `HEEPtest.txt` and related selections for electron ID studies.
 
 The directory defines the filter modules’ headers in `Filters/interface/` and their implementations in `Filters/src/`. Filters typically integrate with `FilterModule` and provide simple pass/fail strings or counters consumed by histograms.
 
-### Histograms/
+### Histograms
 Implements the histogramming subsystem that converts selected events into distributions suitable for validation, plotting, and statistical fits.
 
 Representative headers in `Histograms/interface/` include:
@@ -96,10 +96,10 @@ Representative headers in `Histograms/interface/` include:
 
 The implementations live in `Histograms/src/` with one `.cc` per histogram. See the dedicated `Histograms/README.md` for an in‑depth guide to goals, design, and usage.
 
-### MCGeneration/
+### MCGeneration
 Configuration and helpers for Monte Carlo event generation. Contains CMSSW plugin scaffolding under `plugins/` and job/test configurations under `python/` and `test/`. Use this package to produce private signal or background samples that follow the same conventions as the rest of the framework.
 
-### Modules/
+### Modules
 Core framework classes and physics modules. Important interfaces include:
 
 - `Module.hh`: base interface providing `addDependent`, per‑event `process`, and end‑of‑job `finalize` hooks, plus per‑module timing and parameter handling.  
@@ -109,10 +109,10 @@ Core framework classes and physics modules. Important interfaces include:
 
 This package is the backbone that orchestrates the pipeline and exposes the common APIs used by Filters and Histograms.
 
-### Plans/
+### Plans
 Development notes and planning stubs packaged as a CMSSW library. Not required at runtime; useful for tracking analysis ideas and design experiments alongside the code.
 
-### Statistics/
+### Statistics
 Tools for statistical inference and plotting of fit results. Notable scripts include:
 - `LimitCalculation.py`, `RealRunLimitCalculation.py`, `RunEELimitCalculation.py`: datacard assembly and limit running helpers,
 - `postFitPlot.py`, `makeLimitPlot.py`, `plot1DScan.py`, `diffNuisances.py`: plotting scripts for model scans and post‑fits,
@@ -120,7 +120,7 @@ Tools for statistical inference and plotting of fit results. Notable scripts inc
 
 These tools assume that the histogram stage has produced standardized shapes and yields per process and category.
 
-### Utility/
+### Utility
 Common infrastructure used throughout the framework:
 
 - **Histogram prototypes:** `HistogramPrototype.hh`, `HistogramPrototype1D.hh` provide a uniform way to define histograms. A prototype knows how to instantiate a `TH1`, how to compute its values via `value()`, and how to construct an event weight via a list of `ScaleFactor` objects. The base also supports attaching `Filter` objects to skip fills when selection strings are empty.  
@@ -130,7 +130,7 @@ Common infrastructure used throughout the framework:
 
 The `Utility/src/HistogramPrototype.cc` implementation illustrates the event‑weight and filter‑application flow shared by all histograms.
 
-### Output/
+### Output
 Default location for generated artifacts (ROOT files, plots, and logs). Keep this directory clean in version control as outputs are typically large and site‑specific.
 
 ---
